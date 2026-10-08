@@ -1,0 +1,10 @@
+:root {
+    /* Шрифт проекта (подключён в index.html через Google Fonts) */
+    --font-family: 'DM Sans', 'Arial', sans-serif;
+    --body-bc: #191919;
+    --color-white:#ffffff;
+    --color-black:#000000;
+    --color-nav-hover: #118DA8;
+    
+}
+

@@ -1,0 +1,203 @@
+@media (480px <=width <=1024px) {
+
+    .block1__btn,
+    .block2__btn,
+    .block3__btn {
+        position: absolute;
+    }
+
+    /* Секция 3: текст обтекает портрет справа */
+    .section3__top {
+        display: block;
+        /* block-контейнер, чтобы сработал float */
+        overflow: hidden;
+        /* clearfix — контейнер оборачивает float */
+        gap: 0;
+    }
+
+    .section3__top--right {
+        float: right;
+        margin: 0 0 clamp(15px, 2vw, 25px) clamp(15px, 2.5vw, 30px);
+        shape-outside: margin-box;
+        shape-margin: clamp(8px, 1.5vw, 16px);
+    }
+
+    .section3__top--left {
+        /* flex-gap заменяем на вертикальные отступы */
+        display: block;
+        flex: none;
+        width: auto;
+    }
+
+    .section3__top--left>*+* {
+        margin-top: clamp(15px, 2.5vw, 30px);
+    }
+
+    /* В block-контейнере <a> снова inline — задаём display, иначе width не применится */
+    .section3__a {
+        display: block;
+    }
+
+    .Jacob {
+        width: clamp(170px, 30vw, 340px);
+    }
+    .section4_div {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 780px) {
+    .div_form {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    /* footer */
+    .section__footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+}
+@media (max-width: 480px) {
+
+    /* Больше места под контент: 30px минимум от wrapper + 20px от секции
+       отнимали 100px ширины на 320px экране */
+    .wrapper {
+        padding: 20px clamp(20px, 4vw, 30px);
+    }
+
+    /* Шапка */
+    .navigation {
+        display: none;
+    }
+
+    .burger_svg {
+        display: block;
+    }
+
+    /* секция 1 */
+    .section1 {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(25px, 7vw, 60px);
+        padding-inline: 0;
+        /* компенсируем wrapper — иначе двойные отступы */
+    }
+
+    .section1_right {
+        width: 100%;
+        /* блок занимает всю ширину, текст центрируется */
+        align-items: center;
+        gap: clamp(25px, 7vw, 76px);
+    }
+
+    .section1_right_top {
+        text-align: center;
+    }
+
+    .logotypes_li {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Секция 2 */
+    .section2 {
+        padding-inline: 0;
+    }
+
+    /* Заголовок и кнопка не влезают в ряд на 320px (187 + 120 > 240) */
+    .section2__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(15px, 4vw, 25px);
+    }
+
+    .blocks {
+        flex-direction: column;
+        align-items: center;
+        /* 40px * 2 отнимали 80px: на 320px под картинку оставалось 160px
+           при её ширине 200px */
+        padding: clamp(20px, 5vw, 40px);
+    }
+
+    .blocks>img {
+        width: min(100%, clamp(200px, 60vw, 389px));
+        height: auto;
+        aspect-ratio: 389 / 465;
+        flex-shrink: 1;
+    }
+
+    .right {
+        gap: 20px;
+        width: 100%;
+    }
+
+    .section2__p {
+        text-align: justify;
+    }
+
+    .block1__btn,
+    .block2__btn,
+    .block3__btn {
+        align-self: center;
+        position: static;
+        /* сброс absolute из диапазона 480–1024 */
+    }
+
+    /* Секция 3: блоки друг под другом, портрет сверху по центру */
+    .section3__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(25px, 6vw, 40px);
+        overflow: visible;
+    }
+
+    .section3__top--right {
+        float: none;
+        order: -1;
+        /* портрет первым, текст под ним */
+        margin: 0;
+        align-self: center;
+        flex: none;
+    }
+
+    .section3__top--left {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(18px, 5vw, 30px);
+        width: 100%;
+        text-align: center;
+    }
+
+    .section3__top--left>*+* {
+        margin-top: 0;
+    }
+
+    .section3__a {
+        align-self: center;
+    }
+
+    .Jacob {
+        width: clamp(180px, 55vw, 300px);
+    }
+    /* Секция 4 */
+    .section4_div {
+        grid-template-columns:1fr;
+        justify-items: center;
+    }
+    .stars {
+        width: 80%;
+    }
+    /* footer */
+    .footer_nav {
+        justify-content: start;   
+    }
+    .footer_div1,
+    .footer_div2 {
+        height: 150px;
+    }
+
+}

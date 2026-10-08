@@ -1,0 +1,143 @@
+.section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(30px, 7vw, 80px) clamp(10px, 2.5vw, 50px);
+}
+
+.section3__top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Блоки перетекают в следующую строку, а не наезжают друг на друга */
+    flex-wrap: wrap;
+    gap: clamp(20px, 3vw, 45px);
+}
+
+.section3__top--left {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 30px);
+    /* Как и было 50%, но с разрешением сжатия: блок ужимается до
+       размера контента, а дальше уходит в свою строку (flex-wrap) */
+    flex: 0 1 50%;
+
+    >h3 {
+        font-size: clamp(25px, 5vw, 64px);
+        font-weight: 400;
+        line-height: clamp(30px, 5.5vw, 70px);
+        color: var(--color-white);
+    }
+
+    .section3_p1,
+    .section3_p2 {
+        color: var(--color-white);
+        font-size: clamp(12px, 3vw, 27px);
+        font-weight: 400;
+    }
+
+    .section3__a {
+        transition: transform 0.3s ease,
+                    border 0.3s ease;
+    }
+
+    .section3__a:hover {
+        transform: scale(1.07);
+        border: 4px solid rgb(255, 250, 250);
+        border-radius: 50%;
+    }
+    .section3__a:active {
+        transform: scale(0.8);
+    }
+}
+
+.section3__top--right {
+    align-self: flex-start;
+    /* Свободное место отдаём justify-content, как и раньше;
+       при нехватке — портрет уходит в свою строку */
+    flex: 0 1 auto;
+}
+
+.Jacob {
+    width: clamp(180px, 35vw, 478px);
+    height: auto;
+    max-width: 100%;
+}
+
+.section3__a {
+    align-self: flex-start;
+    width: clamp(65px, 10vw, 112px);
+}
+
+.section3__bottom {
+    padding: clamp(30px, 7vw, 100px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.div_form {
+    max-width: 1300px;
+    width: 100%;
+    height: 387px;
+    background-color: var(--color-black);
+    border-radius: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(20px, 6vw, 60px);
+}
+
+.form_label {
+    .form_label-p {
+        color: var(--color-nav-hover);
+
+    }
+
+    .form_label-h3 {
+        color: var(--color-white);
+        font-size: clamp(40px, 5vw, 80px);
+        line-height: clamp(40px, 5vw, 80px);
+    }
+}
+
+.form {
+    max-width: clamp(250px, 35vw, 400px);
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    >input {
+        background-color: var(--body-bc);
+        width: 100%;
+        padding: clamp(0.5rem, 1vw, 1rem);
+        border-radius: 6px;
+        color: var(--color-white);
+    }
+    input:hover {
+        border: 1px solid var(--color-nav-hover);
+    }
+    input:focus {
+        outline: none;
+    }
+    input:active {
+        border: 1px solid var(--color-nav-hover);
+    }
+
+    >button {
+        width: clamp(70px, 8vw, 87px);
+        height: clamp(30px, 4vw, 48px);
+        color: var(--color-white);
+        background-color: var(--color-nav-hover);
+        border-radius: 6px;
+        font-size: clamp(12px, 2vw, 15px);
+    }
+}

@@ -1,0 +1,14 @@
+
+@import url('variables.css') layer(variables);
+@import url('reset.css') layer(reset);
+@import url('fonts.css') layer(fonts);
+@import url('animation.css') layer(animations);
+@import url('header.css') layer(header);
+@import url('section1.css') layer(section1);
+@import url('section2.css') layer(section2);
+@import url('section3.css') layer(section3);
+@import url('section4.css') layer(section4);
+@import url('footer.css') layer(footer);
+@import url('media.css') layer(media);
+
+@layer variables, reset, fonts, header, section1, section2, section3, section4, footer, media;

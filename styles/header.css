@@ -1,0 +1,100 @@
+.wrapper {
+    padding: 26px clamp(30px, 5vw, 50px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav_logo {
+        width: min(160px, 25vw);
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    .ul {
+        display: flex;
+        gap: clamp(25px, 4vw, 40px);
+        color: var(--color-white);
+        font-weight: 400;
+        font-size: clamp(12px, 2vw, 17px);
+
+        li {
+            :hover {
+                color: var(--color-nav-hover);
+                width: 100%;
+            }
+
+            >a {
+                position: relative;
+            }
+
+        }
+    }
+}
+
+.a_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* ← Центр */
+    transform: translateX(-50%);
+    /* ← Компенсация */
+    width: 0;
+    height: 2px;
+    background: var(--color-nav-hover);
+    transition: width 0.3s ease;
+}
+
+.a_link:hover::after {
+    width: 100%;
+}
+
+.navigation_burger {
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 20px 0 0 20px;
+    width: min(50vw, 200px);
+    height: 100dvh;
+    padding: 10px;
+    background-color: #696464;
+    transform: translateX(100%);
+    visibility: hidden;
+    z-index: 999;
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
+
+    .ul_burger {
+        font-weight: 400;
+        color: var(--color-white);
+
+    }
+}
+.navigation_burger.active {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s linear 0s;
+}
+
+.burger_svg {
+    display: none;
+    width: 50px;
+}
+
+.a_cross {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.cross {
+    display: block;
+    width: 100%;
+}
